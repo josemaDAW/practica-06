@@ -10,7 +10,7 @@ apt update
 apt upgrade -y
 
 #apache
-apt install apache -y
+apt install apache2 -y
 
 #reiniciamos el servicio de apache
 sudo systemctl restart  apache2
@@ -20,6 +20,9 @@ apt install mysql-server -y
 
 #instalamos php
 apt install php libapache2-mod-php php-mysql -y
+
+#copiar el archivo de configuracion de apache
+cp ../config/000-default.conf /etc/apache2/sites-available/000-default.conf
 
 #Reiniciamos apache
 systemctl restart apache2

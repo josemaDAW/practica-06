@@ -2,9 +2,10 @@
 
 set -x
 
+source variables.sh
 #VAriables
-email=sgyt_fbjho22@kygur.com
-domain=practicawordpress.hopto.org
+#email=sgyt_fbjho22@kygur.com
+#domain=practicawordpress.hopto.org
 
 #instalamos el core de snap
 snap install core

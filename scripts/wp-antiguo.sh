@@ -2,10 +2,12 @@
 
 set -x
 
+source variables.sh
+
 #variables de configuracion
-DB_NAME=db_wordpress
-DB_USER=db_user
-DB_PASSWORD=db_password
+#DB_NAME=db_wordpress
+#DB_USER=db_user
+#DB_PASSWORD=db_password
 
 ###################################
 #Paso 1. Instalacion de wordpress#
@@ -40,6 +42,16 @@ sed -i "s/database_name_here/$DB_NAME/" /var/www/html/wordpress/wp-config.php
 sed -i "s/username_here/$DB_USER/" /var/www/html/wordpress/wp-config.php
 
 sed -i "s/password_here/$DB_PASSWORD/" /var/www/html/wordpress/wp-config.php
+
+#configuramos las variables WP_HOME Y WP_SITEURL
+sed -i "/DB_COLLATE/a define('WP_HOME', '$WP_HOME');" /var/www/html/wordpress/wp-config.php
+sed -i "/WP_HOME/a define('SITEURL', '$WP_SITEURL');" /var/www/html/wordpress/wp-config.php
+
+#copiamos el archivo index de wordpress al raiz
+cp /var/www/html/wordpress/index.php /var/www/html/index.php
+
+#configuramos el archivo index
+sed -i "s#wp-blog-header.php#wordpress/wp-blog-header.php#" /var/www/html/index.php
 
 #borramos la base de datos de wordpress de instalaciones prpevias
 mysql -u root <<< "DROP DATABASE IF EXISTS $DB_NAME"

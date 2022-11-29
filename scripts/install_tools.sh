@@ -2,9 +2,11 @@
 
 set -x
 
+source variables.sh
+
 #variables de usuario y contraseña
-STATS_USER=usuario
-STATS_PASS=usuario
+#STATS_USER=usuario
+#STATS_PASS=usuario
 
 #generamos un numero alaeatorio
 BLOWFISH_SECRET=`openssl rand -hex 16`

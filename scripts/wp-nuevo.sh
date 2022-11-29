@@ -3,9 +3,11 @@
 set -x
 
 #variables de configuracion
-DB_NAME=db_wordpress
-DB_USER=db_user
-DB_PASSWORD=db_password
+source variables.sh
+
+#DB_NAME=db_wordpress
+#DB_USER=db_user
+#DB_PASSWORD=db_password
 
 ###################################
 #Paso 1. Instalacion de wordpress#
