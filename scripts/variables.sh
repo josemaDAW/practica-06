@@ -8,5 +8,5 @@ email=sgyt_fbjho22@kygur.com
 domain=practicawordpress.hopto.org
 
 #configurar variables wordpress en un directorio
-WP_HOME=https://practicawordpress.hopto.org/
-WP_SITEURL=https://practicawordpress.hopto.org/wordpress
+WP_HOME=http://practica5wordpress.hopto.org/
+WP_SITEURL=http://practica5wordpress.hopto.org/wordpress
